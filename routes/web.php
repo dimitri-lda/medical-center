@@ -17,14 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Для Доктора
-Route::get('doctor/login', 'Auth\DoctorAuthController@showLoginForm');
-Route::post('doctor/login', 'Auth\DoctorAuthController@login');
-Route::get('doctor/register', 'Auth\DoctorAuthController@showRegistrationForm');
-Route::post('doctor/register', 'Auth\DoctorAuthController@register');
+Route::get('doctor/login', 'App\Http\Controllers\Auth\DoctorAuthController@index')->name('index');
+Route::post('doctor/login', 'App\Http\Controllers\Auth\DoctorAuthController@login')->name('login');
+Route::get('doctor/register', 'App\Http\Controllers\Auth\DoctorAuthController@showRegistrationForm')->name('showRegistrationForm');
+Route::post('doctor/register', 'App\Http\Controllers\Auth\DoctorAuthController@register')->name('register');
 
-// Для Пациента
-Route::get('patient/login', 'Auth\PatientAuthController@showLoginForm');
-Route::post('patient/login', 'Auth\PatientAuthController@login');
-Route::get('patient/register', 'Auth\PatientAuthController@showRegistrationForm');
-Route::post('patient/register', 'Auth\PatientAuthController@register');
+Route::get('patient/login', 'App\Http\Controllers\Auth\PatientAuthController@index')->name('index');
+Route::post('patient/login', 'App\Http\Controllers\Auth\PatientAuthController@login')->name('login');
+Route::get('patient/register', 'App\Http\Controllers\Auth\PatientAuthController@showRegistrationForm')->name('showRegistrationForm');
+Route::post('patient/register', 'App\Http\Controllers\Auth\PatientAuthController@register')->name('register');

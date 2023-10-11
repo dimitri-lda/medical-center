@@ -25,12 +25,20 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "classmap": [
+            "database/factories",
+            "app/Http/Controllers"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        }
+        },
+        "classmap": [
+            "database/factories",
+            "app/Http/Controllers"
+        ]
     },
     "scripts": {
         "post-autoload-dump": [
